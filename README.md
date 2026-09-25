@@ -9,7 +9,6 @@ Punarjanam redirects end-of-life vehicle parts, industrial waste, and constructi
 - **Community Collaboration**: Participatory co-design with local neighborhood collectives and artisans.
 
 ## Development
-
 To run the project locally:
 
 ```sh
