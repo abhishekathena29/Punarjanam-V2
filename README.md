@@ -1,24 +1,26 @@
-# Your Website Studio
+# Punarjanam — Circular Community Infrastructure & Material Reuse
 
-i want to create the website for this
+Punarjanam redirects end-of-life vehicle parts, industrial waste, and construction scrap into climate-resilient community infrastructure, shade pavilions, and public assets in New Delhi.
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/4233bc96-a2cf-49a4-a4d9-ba27d9313d33).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## Architecture & Focus
+- **Community Infrastructure**: Public shade roofs, gathering pavilions, transit shelters, and micro-learning pods.
+- **Material Reuse**: High-tensile automotive chassis, sheet steel, and industrial surplus preserved without blast furnace smelting.
+- **Design & Fabrication**: Modular, demountable dry-joint engineering with ultrasonic structural certification.
+- **Community Collaboration**: Participatory co-design with local neighborhood collectives and artisans.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+To run the project locally:
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
+```
+
+The application will be served at `http://localhost:8080/`.
+
+To build the production bundle:
+
+```sh
+npm run build
 ```

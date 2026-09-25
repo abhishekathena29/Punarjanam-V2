@@ -1,68 +1,60 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { pieces } from "@/lib/catalogue";
+import { ArrowRight, Compass } from "lucide-react";
 
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Shop — Punarjanam" },
+      { title: "Notice: Shop Discontinued — Punarjanam" },
       {
         name: "description",
         content:
-          "Furniture, lighting, sculpture and décor made from end-of-life vehicle parts by artists across Delhi, Jaipur and Gurgaon.",
+          "Punarjanam has completed its strategic transition from art sales to circular community infrastructure and civic public shade roofs.",
       },
-      { property: "og:title", content: "Shop — Punarjanam" },
-      {
-        property: "og:description",
-        content: "Artist-made pieces from reclaimed vehicle parts, each with a provenance record.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Shop,
+  component: DiscontinuedShop,
 });
 
-function Shop() {
+function DiscontinuedShop() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground flex flex-col justify-between">
       <Header />
-      <section className="mx-auto max-w-6xl px-6 pt-16 pb-12">
-        <h1 className="text-5xl md:text-6xl">The collection</h1>
-        <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
-          Four registers, one material story. Pieces are made in small numbers — when a part is
-          gone, the piece is gone.
-        </p>
-      </section>
 
-      <section className="mx-auto max-w-6xl px-6 pb-8">
-        <div className="grid gap-10 sm:grid-cols-2">
-          {pieces.map((piece) => (
-            <article key={piece.id}>
-              <div className="overflow-hidden rounded-3xl bg-secondary">
-                <img
-                  src={piece.image}
-                  alt={piece.name}
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                  className="aspect-square w-full object-cover"
-                />
-              </div>
-              <div className="mt-5 flex items-baseline justify-between">
-                <h2 className="text-2xl">{piece.name}</h2>
-                <span className="text-sm">{piece.price}</span>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">{piece.origin}</p>
-              <p className="text-sm text-muted-foreground">Made by {piece.artist}</p>
-              <p className="mt-3 text-xs tracking-wide text-muted-foreground">
-                {piece.category} · Lot {piece.id}
-              </p>
-            </article>
-          ))}
+      <main className="mx-auto max-w-3xl px-6 py-24 text-center">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary text-accent">
+          <Compass className="h-8 w-8" />
         </div>
-      </section>
+        <span className="font-mono-tag text-xs font-semibold text-accent mt-6 block">
+          Strategic Evolution Notice
+        </span>
+        <h1 className="mt-3 text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground">
+          Punarjanam No Longer Sells Commercial Products
+        </h1>
+        <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
+          As part of our commitment to public good, Punarjanam has completely transitioned from an exploratory art studio to a circular community infrastructure collective.
+        </p>
+        <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+          We have removed all retail product listings, artworks for purchase, and prices. 100% of our reclaimed materials, engineering, and fabrication capacity is now dedicated to community shade roofs, transit structures, and participatory civic commons.
+        </p>
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <Link
+            to="/projects"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-accent transition-all shadow-md"
+          >
+            <span>Explore Civic Infrastructure Projects</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-8 py-3.5 text-sm font-semibold text-foreground hover:bg-secondary transition-all"
+          >
+            <span>Read Our Evolution Story</span>
+          </Link>
+        </div>
+      </main>
+
       <Footer />
     </div>
   );

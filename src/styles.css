@@ -5,17 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * Design system definition for Punarjanam.
+ * Minimalist, architectural, clean and appealing.
+ * Typography: Outfit (geometric, smooth display) + Manrope (crisp, modern readable sans).
+ * Colors: Architectural bone canvas with Punarjanam signature emerald and steel accents.
  */
 
 @theme inline {
@@ -24,8 +17,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --radius-3xl: calc(var(--radius) + 14px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -45,97 +37,63 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
-
 }
 
 :root {
-  --radius: 0.875rem;
-  --background: oklch(0.977 0.008 95);
-  --foreground: oklch(0.24 0.035 165);
-  --card: oklch(0.993 0.004 95);
-  --card-foreground: oklch(0.24 0.035 165);
-  --popover: oklch(0.993 0.004 95);
-  --popover-foreground: oklch(0.24 0.035 165);
-  --primary: oklch(0.26 0.045 163);
-  --primary-foreground: oklch(0.977 0.008 95);
-  --secondary: oklch(0.945 0.012 95);
-  --secondary-foreground: oklch(0.26 0.045 163);
-  --muted: oklch(0.948 0.01 95);
-  --muted-foreground: oklch(0.52 0.02 160);
-  --accent: oklch(0.9 0.1 150);
-  --accent-foreground: oklch(0.24 0.035 165);
+  --radius: 0.625rem;
+  /* Clean architectural bone canvas */
+  --background: oklch(0.99 0.003 90);
+  /* Crisp deep slate charcoal */
+  --foreground: oklch(0.18 0.015 250);
+  /* Pure crisp white card surface */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.015 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.015 250);
+  /* Primary obsidian */
+  --primary: oklch(0.18 0.015 250);
+  --primary-foreground: oklch(0.99 0.003 90);
+  /* Subtle stone surface */
+  --secondary: oklch(0.96 0.004 90);
+  --secondary-foreground: oklch(0.18 0.015 250);
+  /* Muted background for tags and callouts */
+  --muted: oklch(0.955 0.004 90);
+  --muted-foreground: oklch(0.46 0.012 250);
+  /* Signature Punarjanam circular emerald accent */
+  --accent: oklch(0.5 0.15 150);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.9 0.012 95);
-  --input: oklch(0.9 0.012 95);
-  --ring: oklch(0.26 0.045 163);
-  --chart-1: oklch(0.26 0.045 163);
-  --chart-2: oklch(0.9 0.1 150);
-  --chart-3: oklch(0.6 0.06 160);
-  --chart-4: oklch(0.8 0.04 95);
-  --chart-5: oklch(0.45 0.05 160);
-  --sidebar: oklch(0.977 0.008 95);
-  --sidebar-foreground: oklch(0.24 0.035 165);
-  --sidebar-primary: oklch(0.26 0.045 163);
-  --sidebar-primary-foreground: oklch(0.977 0.008 95);
-  --sidebar-accent: oklch(0.9 0.1 150);
-  --sidebar-accent-foreground: oklch(0.24 0.035 165);
-  --sidebar-border: oklch(0.9 0.012 95);
-  --sidebar-ring: oklch(0.26 0.045 163);
-  --font-display: "Instrument Serif", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  /* Hairline architectural border */
+  --border: oklch(0.915 0.004 90);
+  --input: oklch(0.915 0.004 90);
+  --ring: oklch(0.5 0.15 150);
+  --font-display: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
+  --background: oklch(0.14 0.015 250);
+  --foreground: oklch(0.96 0.005 85);
+  --card: oklch(0.18 0.015 250);
+  --card-foreground: oklch(0.96 0.005 85);
+  --popover: oklch(0.18 0.015 250);
+  --popover-foreground: oklch(0.96 0.005 85);
+  --primary: oklch(0.96 0.005 85);
+  --primary-foreground: oklch(0.14 0.015 250);
+  --secondary: oklch(0.22 0.015 250);
+  --secondary-foreground: oklch(0.96 0.005 85);
+  --muted: oklch(0.22 0.015 250);
+  --muted-foreground: oklch(0.68 0.015 250);
+  --accent: oklch(0.58 0.15 150);
+  --accent-foreground: oklch(0.14 0.015 250);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --border: oklch(0.28 0.015 250);
+  --input: oklch(0.28 0.015 250);
+  --ring: oklch(0.58 0.15 150);
 }
 
 @layer base {
@@ -148,14 +106,24 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
   }
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    font-weight: 600;
   }
+}
 
+/* Custom architectural utilities */
+.font-mono-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
